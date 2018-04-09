@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+	id 'com.moowork.node' version '1.2.0'
+	id "com.moowork.gulp" version '1.2.0'
+}
+
+group = 'io.spring.asciidoctor'
+description = 'Spring Asciidoctor Theme'
+
+repositories {
+	mavenCentral()
+}
+
+gulp_default.dependsOn 'npmInstall'
+gulp_default.dependsOn 'installGulp'
+processResources.dependsOn gulp_build
+
+jar {
+	from project.buildDir.absolutePath + '/dist'
+	eachFile { details ->
+		details.path = details.path.startsWith('META-INF') ?: 'theme/' + details.path
+	}
+	includeEmptyDirs = false
+}
+

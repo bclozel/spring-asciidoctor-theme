@@ -1,0 +1,14 @@
+{
+  "name": "spring-asciidoctor-theme",
+  "description": "Spring Asciidoctor Theme",
+  "version": "1.0.0",
+  "repository": "https://github.com/spring-io/spring-asciidoctor-theme",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-asciidoctor": "^1.5.5-4.3",
+    "gulp-connect": "^5.5.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
