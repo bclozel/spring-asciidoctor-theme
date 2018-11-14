@@ -1,34 +1,39 @@
-'use strict';
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+const { src, dest, series, parallel, watch } = require('gulp'),
+    gulpSass = require('gulp-sass'),
     asciidoctor = require('gulp-asciidoctor'),
-    connect = require('gulp-connect');
+    gulpConnect = require('gulp-connect');
 
-var paths = {
+const paths = {
     sass: 'src/sass/**/*.scss',
     dist: 'build/dist/',
     web: 'build/web/'
 };
 
+/*
+ * Building the theme
+ */
+
 // Compile SASS files to build/dist/css/
-gulp.task('sass', function () {
-    return gulp.src(paths.sass)
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest(paths.dist + "css"));
-});
+function sass() {
+    return src(paths.sass)
+        .pipe(gulpSass({outputStyle: 'compressed'}))
+        .pipe(dest(paths.dist + "css"));
+}
 
-// Build the full theme in build/dist/
-gulp.task('build', ['sass'], function () {
-});
 
-gulp.task('copy-dist', ['build'], function () {
-    return gulp.src(paths.dist + '**')
-        .pipe(gulp.dest(paths.web));
-});
+/*
+ * Developer tools
+ */
 
-// Build a sample Asciidoctor document in build/web/index.html
-gulp.task('render', ['copy-dist', 'build'], function () {
-    return gulp.src('test/index.adoc')
+// Copy built theme to static web folder
+function copyDist() {
+    return src(paths.dist + '**')
+        .pipe(dest(paths.web));
+}
+
+// Render test Asciidoctor document
+function render() {
+    return src('test/index.adoc')
         .pipe(asciidoctor({
             safe: 'unsafe',
             doctype: 'book',
@@ -47,21 +52,26 @@ gulp.task('render', ['copy-dist', 'build'], function () {
                 'docinfodir='.concat(process.cwd(), '/src/')
             ]
         }))
-        .pipe(gulp.dest(paths.web))
-        .pipe(connect.reload());
-});
+        .pipe(dest(paths.web))
+        .pipe(gulpConnect.reload());
+}
 
 // Watch files modified in src/** and rebuild theme + sample document
-gulp.task('watch', ['render'], function () {
-    gulp.watch('src/**', ['render']);
-});
+function watchFiles(cb) {
+    watch('src/**', update);
+    cb();
+}
 
-// Start a local web server and reload the page automatically on changes
-gulp.task('connect', function() {
-    connect.server({
+// Serve sample document and reload for changes
+function connect(cb) {
+    gulpConnect.server({
         root: paths.web,
         livereload: true
     });
-});
+    cb();
+}
 
-gulp.task('dev', ['connect', 'watch']);
+const build = series(sass);
+const update = series(build, copyDist, render);
+exports.default = build;
+exports.dev = series(update, parallel(connect, watchFiles));
