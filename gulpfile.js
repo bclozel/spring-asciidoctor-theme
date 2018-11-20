@@ -33,7 +33,7 @@ function copyDist() {
 
 // Render test Asciidoctor document
 function render() {
-    return src('test/index.adoc')
+    return src('test/**.adoc')
         .pipe(asciidoctor({
             safe: 'unsafe',
             doctype: 'book',
@@ -45,6 +45,7 @@ function render() {
                 'sectanchors',
                 'sectnums',
                 'source-highlighter=highlight.js',
+                'highlightjsdir=highlight',
                 'stylesdir=css',
                 'stylesheet=spring.css',
                 'docinfo=shared',
@@ -54,6 +55,11 @@ function render() {
         }))
         .pipe(dest(paths.web))
         .pipe(gulpConnect.reload());
+}
+
+function serveHighlight() {
+    return src('src/highlight/**')
+        .pipe(dest(paths.web + '/highlight'));
 }
 
 // Watch files modified in src/** and rebuild theme + sample document
@@ -71,7 +77,7 @@ function connect(cb) {
     cb();
 }
 
-const build = series(sass);
-const update = series(build, copyDist, render);
+const build = series(sass, serveHighlight);
+const update = series(build, copyDist, render, serveHighlight);
 exports.default = build;
 exports.dev = series(update, parallel(connect, watchFiles));
