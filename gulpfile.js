@@ -1,4 +1,4 @@
-const { src, dest, series, parallel, watch } = require('gulp'),
+const {src, dest, series, parallel, watch} = require('gulp'),
     gulpSass = require('gulp-sass'),
     asciidoctor = require('gulp-asciidoctor'),
     gulpConnect = require('gulp-connect');
@@ -17,7 +17,7 @@ const paths = {
 function sass() {
     return src(paths.sass)
         .pipe(gulpSass({outputStyle: 'compressed'}))
-        .pipe(dest(paths.dist + "css"));
+        .pipe(dest(paths.dist + 'css'));
 }
 
 function js() {
@@ -60,7 +60,6 @@ function render() {
         .pipe(dest(paths.web))
         .pipe(gulpConnect.reload());
 }
-
 
 // Watch files modified in src/** and rebuild theme + sample document
 function watchFiles(cb) {
