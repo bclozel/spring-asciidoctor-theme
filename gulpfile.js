@@ -20,6 +20,10 @@ function sass() {
         .pipe(dest(paths.dist + "css"));
 }
 
+function js() {
+    return src('src/js/**')
+        .pipe(dest(paths.dist + '/js'));
+}
 
 /*
  * Developer tools
@@ -45,7 +49,7 @@ function render() {
                 'sectanchors',
                 'sectnums',
                 'source-highlighter=highlight.js',
-                'highlightjsdir=highlight',
+                'highlightjsdir=js/highlight',
                 'stylesdir=css',
                 'stylesheet=spring.css',
                 'docinfo=shared',
@@ -57,10 +61,6 @@ function render() {
         .pipe(gulpConnect.reload());
 }
 
-function serveHighlight() {
-    return src('src/highlight/**')
-        .pipe(dest(paths.web + '/highlight'));
-}
 
 // Watch files modified in src/** and rebuild theme + sample document
 function watchFiles(cb) {
@@ -77,7 +77,7 @@ function connect(cb) {
     cb();
 }
 
-const build = series(sass, serveHighlight);
-const update = series(build, copyDist, render, serveHighlight);
+const build = series(sass, js);
+const update = series(build, copyDist, render);
 exports.default = build;
 exports.dev = series(update, parallel(connect, watchFiles));
