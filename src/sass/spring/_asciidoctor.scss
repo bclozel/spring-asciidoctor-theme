@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-$header-height: 150px;
+$header-height: 90px;
 $spring-primary-color: #6BB344;
 
 /* ========================================================================== Base ========================================================================== */
@@ -2194,7 +2194,7 @@ pre.highlight, #toc.toc2 {
     text-align: center;
     line-height: $header-height - 5px;
     svg {
-      width: 250px;
+      width: 230px;
       .st0 {
         fill: $spring-primary-color;
       }
