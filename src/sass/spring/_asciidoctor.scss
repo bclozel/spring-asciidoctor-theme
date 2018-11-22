@@ -3,217 +3,14 @@
 $header-height: 90px;
 $spring-primary-color: #6BB344;
 
-/* ========================================================================== Base ========================================================================== */
-/** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html, body {
+  font-size: 100%;
+}
+
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: Karla, sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-/** Remove default margin. */
-body {
-  margin: 0;
-}
-
-/* ========================================================================== Links ========================================================================== */
-/** Remove the gray background color from active links in IE 10. */
-a {
-  background: transparent;
-}
-
-/** Address `outline` inconsistency between Chrome and other browsers. */
-a:focus {
-  outline: thin dotted;
-}
-
-/** Improve readability when focused and also mouse hovered in all browsers. */
-a:active, a:hover {
-  outline: 0;
-}
-
-/* ========================================================================== Typography ========================================================================== */
-/** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari 5, and Chrome. */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/** Address styling not present in IE 8/9, Safari 5, and Chrome. */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/** Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
-b, strong {
-  font-weight: bold;
-}
-
-/** Address styling not present in Safari 5 and Chrome. */
-dfn {
-  font-style: italic;
-}
-
-/** Address differences between Firefox and other browsers. */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/** Address styling not present in IE 8/9. */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/** Correct font family set oddly in Safari 5 and Chrome. */
-code, kbd, pre, samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-/** Improve readability of pre-formatted text in all browsers. */
-pre {
-  white-space: pre-wrap;
-}
-
-/** Set consistent quote types. */
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-/** Address inconsistent and variable font size in all browsers. */
-small {
-  font-size: 80%;
-}
-
-/** Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/* ========================================================================== Embedded content ========================================================================== */
-/** Remove border when inside `a` element in IE 8/9. */
-img {
-  border: 0;
-}
-
-/** Correct overflow displayed oddly in IE 9. */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* ========================================================================== Figures ========================================================================== */
-/** Address margin not present in IE 8/9 and Safari 5. */
-figure {
-  margin: 0;
-}
-
-/* ========================================================================== Forms ========================================================================== */
-/** Define consistent border, margin, and padding. */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/** 1. Correct `color` not being inherited in IE 8/9. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
-legend {
-  border: 0; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/** 1. Correct font family not being inherited in all browsers. 2. Correct font size not being inherited in all browsers. 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome. */
-button, input, select, textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 2 */
-  margin: 0; /* 3 */
-}
-
-/** Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
-button, input {
-  line-height: normal;
-}
-
-/** Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. Correct `select` style inheritance in Firefox 4+ and Opera. */
-button, select {
-  text-transform: none;
-}
-
-/** 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
-}
-
-/** Re-set default cursor for disabled elements. */
-button[disabled], html input[disabled] {
-  cursor: default;
-}
-
-/** 1. Address box sizing set to `content-box` in IE 8/9. 2. Remove excess padding in IE 8/9. */
-input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/** 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome. 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
-input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
-  box-sizing: content-box;
-}
-
-/** Remove inner padding and search cancel button in Safari 5 and Chrome on OS X. */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/** Remove inner padding and border in Firefox 4+. */
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/** 1. Remove default vertical scrollbar in IE 8/9. 2. Improve readability and alignment in all browsers. */
-textarea {
-  overflow: auto; /* 1 */
-  vertical-align: top; /* 2 */
-}
-
-/* ========================================================================== Tables ========================================================================== */
-/** Remove most spacing between table cells. */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-meta.foundation-mq-small {
-  font-family: "only screen and (min-width: 768px)";
-  width: 768px;
-}
-
-meta.foundation-mq-medium {
-  font-family: "only screen and (min-width:1280px)";
-  width: 1280px;
-}
-
-meta.foundation-mq-large {
-  font-family: "only screen and (min-width:1440px)";
-  width: 1440px;
 }
 
 *, *:before, *:after {
@@ -222,15 +19,13 @@ meta.foundation-mq-large {
   box-sizing: border-box;
 }
 
-html, body {
-  font-size: 100%;
-}
 
 body {
   background: white;
   color: #000;
   padding: 0;
   margin: 0;
+  font-size: 16px;
   font-family: Karla, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -330,7 +125,7 @@ p.lead, .paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type
   color: #0b0a0a;
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.8em;
 }
 
 /* Typography resets */
@@ -594,85 +389,7 @@ blockquote, blockquote p {
   display: block;
   padding-top: 4px;
   padding-bottom: 4px;
-}
-
-@media only screen and (min-width: 768px) {
-  h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 {
-    line-height: 1.2;
-  }
-  h1 {
-    font-size: 2.75em;
-  }
-  h2 {
-    font-size: 2.3125em;
-  }
-  h3, #toctitle, .sidebarblock > .content > .title {
-    font-size: 1.6875em;
-  }
-  h4 {
-    font-size: 1.4375em;
-  }
-
-  #tocbot {
-  }
-
-  #tocbot a.toc-link.node-name--H1 {
-    font-style: italic
-  }
-
-  #tocbot ol {
-    margin: 0;
-    padding: 0;
-    padding-left: 0.6rem;
-  }
-
-  #tocbot ol li {
-    list-style: none;
-    padding: 0 0;
-    margin: 0;
-    display: block;
-  }
-
-  #tocbot {
-    z-index: 999;
-    .toc-link {
-      position: relative;
-      display: block;
-      z-index: 999;
-      padding-right: 5px;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      border-right: 1px solid #eee;
-    }
-    .is-active-link {
-      padding-right: 3px;
-      border-right: 3px solid $spring-primary-color;
-    }
-  }
-
-  @media screen {
-    #tocbot > ul.toc-list {
-      margin-bottom: 0.5em;
-      margin-left: 0.125em
-    }
-    #tocbot ul.sectlevel0, #tocbot a.toc-link.node-name--H1 + ul {
-      padding-left: 0
-    }
-    #tocbot a.toc-link {
-      height: 100%
-    }
-    .is-collapsible {
-      max-height: 3000px;
-      overflow: hidden;
-    }
-    .is-collapsed {
-      max-height: 0
-    }
-    .is-active-link {
-      font-weight: 700
-    }
-  }
-
+  outline: none;
 }
 
 /* Tables */
@@ -820,108 +537,6 @@ p a > code:hover {
   color: rgba(0, 0, 0, 0.9);
 }
 
-#header, #content, #footnotes, #footer {
-  width: 100%;
-  //margin-left: 3rem;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 62.5em;
-  *zoom: 1;
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-}
-
-#header:before, #header:after, #content:before, #content:after, #footnotes:before, #footnotes:after, #footer:before, #footer:after {
-  content: " ";
-  display: table;
-}
-
-#header:after, #content:after, #footnotes:after, #footer:after {
-  clear: both;
-}
-
-#content {
-  margin-top: 1.25em;
-}
-
-#content:before {
-  content: none;
-}
-
-#header > h1:first-child {
-  margin-top: 2.55rem;
-  margin-bottom: 0;
-}
-
-#header > h1:first-child + #toc {
-  margin-top: 8px;
-  border-top: 1px solid #ddddd8;
-}
-
-#header > h1:only-child, body.toc2 #header > h1:nth-last-child(2) {
-  border-bottom: 1px solid #ddddd8;
-  padding-bottom: 8px;
-}
-
-#header .details {
-  border-bottom: 1px solid #ddddd8;
-  line-height: 1.45;
-  padding-top: 0.5em;
-  padding-bottom: 2.25em;
-  padding-left: 0.25em;
-  color: rgba(0, 0, 0, 0.6);
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-flow: row wrap;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-}
-
-#header .details span:first-child {
-  margin-left: -0.125em;
-}
-
-#header .details span.email a {
-  color: rgba(0, 0, 0, 0.85);
-}
-
-#header .details br {
-  display: none;
-}
-
-#header .details br + span:before {
-  content: "\00a0\2013\00a0";
-}
-
-#header .details br + span.author:before {
-  content: "\00a0\22c5\00a0";
-  color: rgba(0, 0, 0, 0.85);
-}
-
-#header .details br + span#revremark:before {
-  content: "\00a0|\00a0";
-}
-
-#header #revnumber {
-  text-transform: capitalize;
-}
-
-#header #revnumber:after {
-  content: "\00a0";
-}
-
-#content > h1:first-child:not([class]) {
-  color: rgba(0, 0, 0, 0.85);
-  border-bottom: 1px solid #ddddd8;
-  padding-bottom: 8px;
-  margin-top: 0;
-  padding-top: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
 #toc {
   border-bottom: 1px solid #ddddd8;
   padding-bottom: 0.5em;
@@ -967,90 +582,6 @@ body.toc2 {
   text-rendering: optimizeLegibility;
 }
 
-@media only screen and (min-width: 768px) {
-  #toctitle {
-    font-size: 1.375em;
-  }
-  body.toc2 {
-    padding-right: 0;
-    padding-left: 15em;
-  }
-  #toc.toc2 {
-    margin-top: 0 !important;
-    background-color: #fff;
-    position: absolute;
-    width: 15em;
-    left: -15em;
-    top: 0;
-    //border-right: 1px solid #efefed;
-    border-top-width: 0 !important;
-    border-bottom-width: 0 !important;
-    z-index: 1000;
-    padding: 0.6em 1em 1.25em 1em;
-    //height: 100%;
-    overflow: auto;
-  }
-  #toc.toc2 #toctitle {
-    margin-top: 0;
-    margin-bottom: 0.8rem;
-    font-size: 1.2em;
-  }
-  #toc.toc2 > ul {
-    font-size: 0.9em;
-    margin-bottom: 0;
-  }
-  #toc.toc2 ul ul {
-    margin-left: 0;
-    padding-left: 1em;
-  }
-  #toc.toc2 ul.sectlevel0 ul.sectlevel1 {
-    padding-left: 0;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-  body.toc2.toc-right {
-    padding-left: 0;
-    padding-right: 15em;
-  }
-  body.toc2.toc-right #toc.toc2 {
-    border-right-width: 0;
-    border-left: 1px solid #ddddd8;
-    left: auto;
-    right: 0;
-  }
-
-  #header, #content, #footnotes, #footer {
-    padding-left: 0.9375em;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  body.toc2 {
-    padding-right: 0;
-    padding-left: 25em;
-  }
-  #toc.toc2 {
-    width: 25em;
-    left: -25em;
-  }
-  #toc.toc2 #toctitle {
-    font-size: 1.375em;
-  }
-  #toc.toc2 > ul {
-    font-size: 0.95em;
-  }
-  #toc.toc2 ul ul {
-    padding-left: 1.25em;
-  }
-  body.toc2.toc-right {
-    padding-left: 0;
-    padding-right: 20em;
-  }
-  #header, #content, #footnotes, #footer {
-    padding-left: 1.9375em;
-  }
-}
-
 #content #toc {
   border-style: solid;
   border-width: 1px;
@@ -1089,11 +620,6 @@ body.toc2 {
   padding-bottom: 0.625em;
 }
 
-@media only screen and (min-width: 768px) {
-  .sect1 {
-    padding-bottom: 1.25em;
-  }
-}
 
 .sect1 + .sect1 {
   border-top: 1px solid #efefed;
@@ -1269,17 +795,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   word-wrap: normal;
 }
 
-@media only screen and (min-width: 768px) {
-  .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] {
-    font-size: 0.90625em;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] {
-    font-size: 0.8125em;
-  }
-}
 
 .literalblock.output pre {
   color: whitesmoke;
@@ -1303,7 +818,8 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   display: none;
   content: attr(data-lang);
   position: absolute;
-  font-size: 0.75em;
+  font-size: 0.8em;
+  font-weight: bold;
   top: 0.425rem;
   right: 0.5rem;
   line-height: 1;
@@ -2092,74 +1608,6 @@ b.conum * {
   border-left: none;
 }
 
-body {
-  font-size: 16px;
-}
-
-h1 {
-  font-size: 2.2rem;
-  letter-spacing: -1px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  &:focus {
-    box-shadow: none;
-    outline: none;
-  }
-}
-
-h2, h3, h4, h5, h6 {
-  padding: .6rem 0 .4rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  letter-spacing: -1px;
-}
-
-h3 {
-  font-size: 1.4rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-}
-
-pre.highlight {
-  background: #232323;
-  code {
-    color: #e6e1dc;
-  }
-  color: #e6e1dc;
-  border-radius: 4px;
-}
-
-pre.highlight, #toc.toc2 {
-  a {
-    color: #000;
-    font-size: 1rem;
-  }
-  ul.sectlevel1 {
-    padding-left: 0.2rem;
-    li {
-      line-height: 1.4rem;
-    }
-  }
-}
-
-
-::selection {
-  background-color: #d1ff79;
-}
-
-.literalblock pre, .listingblock pre[class="highlight"], .highlight, pre, .highlight code,.highlight code span {
-  &::selection {
-    background: rgba(255,255,255,.2) !important;
-  }
-}
-
 @media print {
   #tocbot a.toc-link.node-name--H4 {
     display: none
@@ -2174,117 +1622,4 @@ pre.highlight, #toc.toc2 {
 
 .is-collapsed {
   max-height: 0
-}
-
-#header-spring {
-  position: absolute;
-  text-rendering: optimizeLegibility;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $header-height - 3px;
-  border-bottom: 1px solid #ddddd8;
-  margin: 0 1rem;
-  padding: 0 1rem;
-  border-top: 3px solid $spring-primary-color;
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 22px;
-    text-align: center;
-    line-height: $header-height - 5px;
-    svg {
-      width: 230px;
-      .st0 {
-        fill: $spring-primary-color;
-      }
-      .st2 {
-        fill: #666;
-      }
-    }
-  }
-}
-
-body.book {
-
-  #header-spring {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    margin: 0;
-  }
-
-  #header>h1:only-child {
-    border: 0 none;
-    padding-bottom: 1.2rem;
-    font-size: 1.8rem;
-  }
-
-  #header, #content, #footnotes, #footer {
-    margin: 0 auto;
-  }
-
-}
-
-body.toc2 {
-
-  #header-spring {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-  }
-
-  #header>h1:only-child {
-    font-size: 2.2rem;
-  }
-
-  #header, #content, #footnotes, #footer {
-    margin: 0;
-  }
-
-}
-
-body.is-position-fixed {
-
-  @media only screen and (min-width: 768px) {
-    #toc.toc2 {
-      position: fixed;
-      left: 0;
-      height: 100%;
-    }
-  }
-}
-
-div.back-action, #toc.toc2 div.back-action {
-  padding: 0.8rem .4rem;
-  border-bottom: 1px solid #ddddd8;
-  a {
-    position: relative;
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    padding-left: 40px;
-    span {
-      position: absolute;
-      left: 5px;
-      top: 5px;
-      display: block;
-      background-color: #333;
-      color: #fff;
-      height: 26px;
-      width: 26px;
-      border-radius: 13px;
-    }
-    i {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-    }
-    &:hover {
-      span {
-        background-color: #000;
-      }
-    }
-  }
 }

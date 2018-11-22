@@ -25,6 +25,11 @@ function js() {
         .pipe(dest(paths.dist + '/js'));
 }
 
+function favicon() {
+    return src('src/**.ico')
+        .pipe(dest(paths.dist + '/'));
+}
+
 /*
  * Developer tools
  */
@@ -76,7 +81,7 @@ function connect(cb) {
     cb();
 }
 
-const build = series(sass, js);
+const build = series(sass, js, favicon);
 const update = series(build, copyDist, render);
 exports.default = build;
 exports.dev = series(update, parallel(connect, watchFiles));
