@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+$header-height: 150px;
+$spring-primary-color: #6BB344;
+
 /* ========================================================================== Base ========================================================================== */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html {
@@ -643,7 +646,7 @@ blockquote, blockquote p {
     }
     .is-active-link {
       padding-right: 3px;
-      border-right: 3px solid #54bc4b;
+      border-right: 3px solid $spring-primary-color;
     }
   }
 
@@ -848,7 +851,7 @@ p a > code:hover {
 }
 
 #header > h1:first-child {
-  margin-top: 1.55rem;
+  margin-top: 2.55rem;
   margin-bottom: 0;
 }
 
@@ -866,7 +869,7 @@ p a > code:hover {
   border-bottom: 1px solid #ddddd8;
   line-height: 1.45;
   padding-top: 0.5em;
-  padding-bottom: 1.25em;
+  padding-bottom: 2.25em;
   padding-left: 0.25em;
   color: rgba(0, 0, 0, 0.6);
   display: -ms-flexbox;
@@ -915,12 +918,12 @@ p a > code:hover {
   border-bottom: 1px solid #ddddd8;
   padding-bottom: 8px;
   margin-top: 0;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
 #toc {
-  border-bottom: 1px solid #efefed;
+  border-bottom: 1px solid #ddddd8;
   padding-bottom: 0.5em;
 }
 
@@ -960,7 +963,8 @@ p a > code:hover {
 }
 
 body.toc2 {
-  padding-top: 65px;
+  padding-top: $header-height;
+  text-rendering: optimizeLegibility;
 }
 
 @media only screen and (min-width: 768px) {
@@ -976,7 +980,7 @@ body.toc2 {
     background-color: #fff;
     position: absolute;
     width: 15em;
-    left: 0;
+    left: -15em;
     top: 0;
     //border-right: 1px solid #efefed;
     border-top-width: 0 !important;
@@ -1010,7 +1014,7 @@ body.toc2 {
   }
   body.toc2.toc-right #toc.toc2 {
     border-right-width: 0;
-    border-left: 1px solid #efefed;
+    border-left: 1px solid #ddddd8;
     left: auto;
     right: 0;
   }
@@ -2093,7 +2097,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   letter-spacing: -1px;
 }
 
@@ -2132,8 +2136,7 @@ pre.highlight {
   border-radius: 4px;
 }
 
-pre.highlight,
-#toc.toc2 {
+pre.highlight, #toc.toc2 {
   a {
     color: #000;
     font-size: 1rem;
@@ -2175,27 +2178,29 @@ pre.highlight,
 
 #header-spring {
   position: absolute;
+  text-rendering: optimizeLegibility;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 65px;
-  border-bottom: 1px solid #aaa;
+  left: -1rem;
+  right: -1rem;
+  height: $header-height - 3px;
+  border-bottom: 1px solid #ddddd8;
   margin: 0 1rem;
   padding: 0 1rem;
+  border-top: 3px solid $spring-primary-color;
   h1 {
     margin: 0;
     padding: 0;
     font-size: 22px;
-    line-height: 60px;
-    strong {
-      color: #000;
-      font-weight: normal;
-    }
-    span {
-      color: rgba(0, 0, 0, 0.8);
-      font-family: Karla, sans-serif;
-      padding-left: 5px;
-      font-size: 18px;
+    text-align: center;
+    line-height: $header-height - 5px;
+    svg {
+      width: 250px;
+      .st0 {
+        fill: $spring-primary-color;
+      }
+      .st2 {
+        fill: #666;
+      }
     }
   }
 }
@@ -2207,6 +2212,38 @@ body.is-position-fixed {
       position: fixed;
       left: 0;
       height: 100%;
+    }
+  }
+}
+
+div.back-action, #toc.toc2 div.back-action {
+  padding: 0.8rem .4rem;
+  border-bottom: 1px solid #ddddd8;
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    padding-left: 40px;
+    span {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      display: block;
+      background-color: #333;
+      color: #fff;
+      height: 26px;
+      width: 26px;
+      border-radius: 13px;
+    }
+    i {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+    &:hover {
+      span {
+        background-color: #000;
+      }
     }
   }
 }
