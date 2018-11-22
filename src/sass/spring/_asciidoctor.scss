@@ -1217,7 +1217,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 
 .sidebarblock {
   border-style: solid;
-  border-width: 1px;
+  border-width: 0;
   border-color: #d7d7d7;
   margin-bottom: 1.25em;
   padding: 1.25em;
@@ -2180,8 +2180,8 @@ pre.highlight, #toc.toc2 {
   position: absolute;
   text-rendering: optimizeLegibility;
   top: 0;
-  left: -1rem;
-  right: -1rem;
+  left: 0;
+  right: 0;
   height: $header-height - 3px;
   border-bottom: 1px solid #ddddd8;
   margin: 0 1rem;
@@ -2203,6 +2203,47 @@ pre.highlight, #toc.toc2 {
       }
     }
   }
+}
+
+body.book {
+
+  #header-spring {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 0;
+  }
+
+  #header>h1:only-child {
+    border: 0 none;
+    padding-bottom: 1.2rem;
+    font-size: 1.8rem;
+  }
+
+  #header, #content, #footnotes, #footer {
+    margin: 0 auto;
+  }
+
+}
+
+body.toc2 {
+
+  #header-spring {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  #header>h1:only-child {
+    font-size: 2.2rem;
+  }
+
+  #header, #content, #footnotes, #footer {
+    margin: 0;
+  }
+
 }
 
 body.is-position-fixed {
