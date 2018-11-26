@@ -369,7 +369,7 @@ blockquote, blockquote p {
 }
 
 #tocbot {
-  padding: 1rem 0;
+  padding: 0 0 1rem 0;
   line-height: 1.5rem;
 }
 
@@ -397,6 +397,7 @@ table {
   background: white;
   margin-bottom: 1.25em;
   border: solid 1px #cacaca;
+  border-spacing: 0;
 }
 
 table thead, table tfoot {
@@ -617,6 +618,7 @@ body.toc2 {
 
 #footer-text {
   //color: #cbcfd2;
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.44;
 }
 
