@@ -473,6 +473,10 @@ pre, pre > code {
   text-rendering: optimizeSpeed;
 }
 
+pre {
+  overflow: auto;
+}
+
 em em {
   font-style: normal;
 }
