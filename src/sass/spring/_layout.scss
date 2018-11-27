@@ -41,6 +41,7 @@ div.back-action, #toc.toc2 div.back-action {
   margin: 0 1rem;
   padding: 0 1rem;
   border-top: 3px solid $spring-primary-color;
+  border-bottom: 1px solid #ddddd8;
   h1 {
     margin: 0;
     padding: 0;
@@ -48,7 +49,6 @@ div.back-action, #toc.toc2 div.back-action {
     text-align: left;
     line-height: $header-height - 4px;
     padding-left: 0.6rem;
-    border-bottom: 1px solid #ddddd8;
     svg {
       width: 200px;
       .st0 {
